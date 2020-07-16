@@ -13,24 +13,26 @@
             <objects>
                 <viewController modalPresentationStyle="fullScreen" id="BYZ-38-t0r" customClass="ViewController" customModule="KotlinIOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Rrt-k7-eeL">
-                                <rect key="frame" x="20" y="335" width="374" height="216"/>
+                                <rect key="frame" x="20" y="247" width="374" height="216"/>
                                 <connections>
                                     <outlet property="dataSource" destination="BYZ-38-t0r" id="311-eS-M5b"/>
                                 </connections>
                             </pickerView>
                             <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wFb-s1-Wk1">
-                                <rect key="frame" x="20" y="556" width="374" height="216"/>
+                                <rect key="frame" x="20" y="468" width="374" height="216"/>
                                 <connections>
                                     <outlet property="dataSource" destination="BYZ-38-t0r" id="Vwa-yn-hyQ"/>
                                 </connections>
                             </pickerView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yJb-Pe-N2A">
-                                <rect key="frame" x="20" y="792" width="374" height="30"/>
-                                <state key="normal" title="GET JOURNEYS!"/>
+                                <rect key="frame" x="20" y="704" width="374" height="30"/>
+                                <state key="normal" title="GET JOURNEYS!">
+                                    <color key="titleColor" red="0.74901960779999999" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
                                 <connections>
                                     <action selector="ButtonPress:" destination="BYZ-38-t0r" eventType="touchUpInside" id="TEW-mT-WrH"/>
                                 </connections>
@@ -64,7 +66,7 @@
         <!--Journeys-->
         <scene sceneID="Ug7-kK-OlB">
             <objects>
-                <viewController storyboardIdentifier="DISPLAY_JOUNEYS_VIEW_CONTROLLER" modalPresentationStyle="fullScreen" id="XYi-XF-u3A" customClass="DisplayJourneysViewController" customModule="KotlinIOS" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="DISPLAY_JOUNEYS_VIEW_CONTROLLER" modalPresentationStyle="fullScreen" interfaceStyle="light" id="XYi-XF-u3A" customClass="DisplayJourneysViewController" customModule="KotlinIOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="kf2-Fd-l8K">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -90,6 +92,7 @@
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
                         <outlet property="resultsTableView" destination="kP9-XB-6dN" id="kMF-kb-N34"/>
+                        <outlet property="titleBar" destination="bzU-Ck-3n4" id="Aoc-68-M8j"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FNY-94-YHU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -101,9 +104,14 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="OPA-k2-XmM" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="W8W-T8-yog">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="W8W-T8-yog">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="barTintColor" red="0.74901960779999999" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
