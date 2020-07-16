@@ -19,6 +19,7 @@
 		C50B191924C06961000522DE /* CustomCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C50B191824C06961000522DE /* CustomCell.xib */; };
 		C50B191B24C06981000522DE /* CustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C50B191A24C06981000522DE /* CustomCell.swift */; };
 		C52023BF24BEF78A0036BD10 /* DisplayJourneysViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C52023BE24BEF78A0036BD10 /* DisplayJourneysViewController.swift */; };
+		C54BF21424C0C4C4001D4B5B /* StationListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C54BF21324C0C4C4001D4B5B /* StationListViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -70,6 +71,7 @@
 		C50B191824C06961000522DE /* CustomCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomCell.xib; sourceTree = "<group>"; };
 		C50B191A24C06981000522DE /* CustomCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCell.swift; sourceTree = "<group>"; };
 		C52023BE24BEF78A0036BD10 /* DisplayJourneysViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplayJourneysViewController.swift; sourceTree = "<group>"; };
+		C54BF21324C0C4C4001D4B5B /* StationListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationListViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -131,6 +133,7 @@
 				C52023BE24BEF78A0036BD10 /* DisplayJourneysViewController.swift */,
 				C50B191824C06961000522DE /* CustomCell.xib */,
 				C50B191A24C06981000522DE /* CustomCell.swift */,
+				C54BF21324C0C4C4001D4B5B /* StationListViewController.swift */,
 			);
 			path = KotlinIOS;
 			sourceTree = "<group>";
@@ -308,6 +311,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C52023BF24BEF78A0036BD10 /* DisplayJourneysViewController.swift in Sources */,
+				C54BF21424C0C4C4001D4B5B /* StationListViewController.swift in Sources */,
 				47729E0822F447C800B9B36B /* ViewController.swift in Sources */,
 				C50B191B24C06981000522DE /* CustomCell.swift in Sources */,
 				47729E0622F447C800B9B36B /* AppDelegate.swift in Sources */,

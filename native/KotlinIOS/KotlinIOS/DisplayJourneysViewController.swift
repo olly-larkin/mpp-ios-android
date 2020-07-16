@@ -10,6 +10,10 @@ class DisplayJourneysViewController: UIViewController {
     
     private var fares: Fares? = nil
     
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpTable()
@@ -18,6 +22,7 @@ class DisplayJourneysViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.navigationController?.isNavigationBarHidden = false
+        navigationController?.navigationBar.barStyle = .black
     }
     
     private func setUpTable() {

@@ -3,11 +3,13 @@ import SharedCode
 
 class ViewController: UIViewController {
 
-    private var data: [String] = []
+    private var stationNameList: [String] = []
 
     @IBOutlet private var pickerdeparture: UIPickerView!
     @IBOutlet private var pickerdestination: UIPickerView!
     @IBOutlet var getJourneysButton: UIButton!
+    
+    @IBOutlet var testButton: UIButton!
     
     private let presenter: ApplicationContractPresenter = ApplicationPresenter()
     
@@ -28,9 +30,18 @@ class ViewController: UIViewController {
     }
     
     @IBAction func ButtonPress(_ sender: Any) {
-        let depart = data[pickerdeparture.selectedRow(inComponent: 0)]
-        let dest = data[pickerdestination.selectedRow(inComponent: 0)]
+        let depart = stationNameList[pickerdeparture.selectedRow(inComponent: 0)]
+        let dest = stationNameList[pickerdestination.selectedRow(inComponent: 0)]
         presenter.loadJourneys(departure: depart, destination: dest)
+    }
+    
+    @IBAction func testButtonPress() {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let stationViewController = storyboard.instantiateViewController(withIdentifier: "STATIONS_VIEW_CONTROLLER") as! StationListViewController
+//        self.show(stationViewController, sender: self)
+        self.navigationController?.pushViewController(stationViewController, animated: true)
+        stationViewController.setButtonRef(testButton)
+        stationViewController.setData(stations: stationNameList)
     }
 }
 
@@ -45,13 +56,13 @@ extension ViewController: UIPickerViewDelegate, UIPickerViewDataSource {
 
     internal func pickerView(_ pickerView: UIPickerView,
         numberOfRowsInComponent component: Int) -> Int {
-        return data.count
+        return stationNameList.count
     }
 
     internal func pickerView(_ pickerView: UIPickerView,
         titleForRow row: Int,
         forComponent component: Int) -> String? {
-        return data[row]
+        return stationNameList[row]
     }
     
 }
@@ -78,7 +89,7 @@ extension ViewController: ApplicationContractView {
     }
     
     func updateDropDowns(stationNames: [String]) {
-        data = stationNames
+        stationNameList = stationNames
         pickerdeparture.reloadAllComponents()
         pickerdestination.reloadAllComponents()
     }

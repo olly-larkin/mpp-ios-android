@@ -37,12 +37,22 @@
                                     <action selector="ButtonPress:" destination="BYZ-38-t0r" eventType="touchUpInside" id="TEW-mT-WrH"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ksm-WL-RNU">
+                                <rect key="frame" x="20" y="100" width="374" height="30"/>
+                                <state key="normal" title="CLICK ME"/>
+                                <connections>
+                                    <action selector="testButtonPress" destination="BYZ-38-t0r" eventType="touchUpInside" id="LQX-Ea-6OC"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="yJb-Pe-N2A" firstAttribute="top" secondItem="wFb-s1-Wk1" secondAttribute="bottom" constant="20" id="20Y-ee-Ksu"/>
+                            <constraint firstItem="Ksm-WL-RNU" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="100" id="GMy-eX-QHW"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="yJb-Pe-N2A" secondAttribute="trailing" constant="20" id="HUG-Vo-CO1"/>
                             <constraint firstItem="wFb-s1-Wk1" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="KqT-ug-u8B"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Ksm-WL-RNU" secondAttribute="trailing" constant="20" id="MFg-Dx-csh"/>
+                            <constraint firstItem="Ksm-WL-RNU" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="OBZ-aJ-Eom"/>
                             <constraint firstItem="yJb-Pe-N2A" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="TWn-Ng-W4Q"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Rrt-k7-eeL" secondAttribute="trailing" constant="20" id="UEv-DT-c8I"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="wFb-s1-Wk1" secondAttribute="trailing" constant="20" id="hIE-Aw-Q4y"/>
@@ -57,6 +67,7 @@
                         <outlet property="getJourneysButton" destination="yJb-Pe-N2A" id="s9d-ja-VJe"/>
                         <outlet property="pickerdeparture" destination="Rrt-k7-eeL" id="hgc-Zd-4Hv"/>
                         <outlet property="pickerdestination" destination="wFb-s1-Wk1" id="7yM-Nw-QFE"/>
+                        <outlet property="testButton" destination="Ksm-WL-RNU" id="OvX-MF-2LJ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -97,7 +108,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FNY-94-YHU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1265" y="1"/>
+            <point key="canvasLocation" x="361" y="735"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="wvP-L0-OYY">
@@ -114,6 +125,9 @@
                         </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
+                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="6kB-wB-ZXr">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </toolbar>
                     <connections>
                         <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="Ra8-qW-Bnd"/>
                     </connections>
@@ -121,6 +135,47 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PKQ-cl-gd2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-539.13043478260875" y="0.6696428571428571"/>
+        </scene>
+        <!--Station List View Controller-->
+        <scene sceneID="xpk-RB-Kyf">
+            <objects>
+                <viewController storyboardIdentifier="STATIONS_VIEW_CONTROLLER" modalPresentationStyle="fullScreen" id="6SY-Cg-RBA" customClass="StationListViewController" customModule="KotlinIOS" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="19l-8L-Vae">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <searchBar contentMode="redraw" placeholder="Search Stations" showsCancelButton="YES" translatesAutoresizingMaskIntoConstraints="NO" id="z5G-ob-hMi">
+                                <rect key="frame" x="0.0" y="44" width="414" height="56"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </searchBar>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="3N3-Zx-rZt">
+                                <rect key="frame" x="0.0" y="100" width="414" height="762"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="6SY-Cg-RBA" id="UNY-wT-4uf"/>
+                                    <outlet property="delegate" destination="6SY-Cg-RBA" id="NEw-v6-QwG"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="z5G-ob-hMi" firstAttribute="leading" secondItem="zjT-2C-15u" secondAttribute="leading" id="X5d-va-bby"/>
+                            <constraint firstItem="3N3-Zx-rZt" firstAttribute="trailing" secondItem="zjT-2C-15u" secondAttribute="trailing" id="ZZD-1v-0cg"/>
+                            <constraint firstItem="z5G-ob-hMi" firstAttribute="trailing" secondItem="zjT-2C-15u" secondAttribute="trailing" id="b1Z-wS-Obu"/>
+                            <constraint firstItem="3N3-Zx-rZt" firstAttribute="leading" secondItem="zjT-2C-15u" secondAttribute="leading" id="cKj-Yz-irK"/>
+                            <constraint firstItem="3N3-Zx-rZt" firstAttribute="top" secondItem="z5G-ob-hMi" secondAttribute="bottom" id="dLc-ne-sgB"/>
+                            <constraint firstItem="3N3-Zx-rZt" firstAttribute="bottom" secondItem="zjT-2C-15u" secondAttribute="bottom" id="xiL-XA-Mw5"/>
+                            <constraint firstItem="z5G-ob-hMi" firstAttribute="top" secondItem="zjT-2C-15u" secondAttribute="top" id="yAa-By-ozr"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="zjT-2C-15u"/>
+                    </view>
+                    <connections>
+                        <outlet property="stationsTableView" destination="3N3-Zx-rZt" id="9MC-Bf-0oZ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="EYR-oZ-M2b" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1311.5942028985507" y="0.6696428571428571"/>
         </scene>
     </scenes>
 </document>
