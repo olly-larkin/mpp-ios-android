@@ -43,24 +43,15 @@ extension ViewController: UIPickerViewDelegate, UIPickerViewDataSource {
         super.didReceiveMemoryWarning()
     }
 
-    private func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int {
-        // Column count: use one column.
-        return 1
-    }
-
     internal func pickerView(_ pickerView: UIPickerView,
         numberOfRowsInComponent component: Int) -> Int {
-
-            // Row count: rows equals array length.
-            return data.count
+        return data.count
     }
 
     internal func pickerView(_ pickerView: UIPickerView,
         titleForRow row: Int,
         forComponent component: Int) -> String? {
-
-            // Return a string from the array for this row.
-            return data[row]
+        return data[row]
     }
     
 }
@@ -80,7 +71,6 @@ extension ViewController: ApplicationContractView {
         let newViewController = storyboard.instantiateViewController(withIdentifier: "DISPLAY_JOUNEYS_VIEW_CONTROLLER") as! DisplayJourneysViewController
         self.navigationController?.isNavigationBarHidden = false
         self.show(newViewController, sender: self)
-        newViewController.setPresenter(presenter)
         newViewController.setTableData(fareList)
     }
     

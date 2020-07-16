@@ -15,7 +15,33 @@
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ol6-RA-xAi" id="WR6-cx-ML1">
                 <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
                 <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Price" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z13-Zf-bqs">
+                        <rect key="frame" x="355" y="11.5" width="39" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eR1-vS-lXz">
+                        <rect key="frame" x="20" y="11.5" width="38" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="eR1-vS-lXz" firstAttribute="top" secondItem="WR6-cx-ML1" secondAttribute="top" constant="11.58" id="Fgl-hY-cQA"/>
+                    <constraint firstItem="eR1-vS-lXz" firstAttribute="leading" secondItem="WR6-cx-ML1" secondAttribute="leading" constant="20" id="UEL-iT-80R"/>
+                    <constraint firstAttribute="bottom" secondItem="eR1-vS-lXz" secondAttribute="bottom" constant="11.42" id="X7L-nZ-pu9"/>
+                    <constraint firstAttribute="trailing" secondItem="Z13-Zf-bqs" secondAttribute="trailing" constant="20" id="ZeG-D7-3ft"/>
+                    <constraint firstAttribute="bottom" secondItem="Z13-Zf-bqs" secondAttribute="bottom" constant="11.42" id="aLe-5G-xeu"/>
+                    <constraint firstItem="Z13-Zf-bqs" firstAttribute="top" secondItem="WR6-cx-ML1" secondAttribute="top" constant="11.58" id="mdr-xX-w2k"/>
+                </constraints>
             </tableViewCellContentView>
+            <connections>
+                <outlet property="priceLabel" destination="Z13-Zf-bqs" id="MGA-V7-mlA"/>
+                <outlet property="timeLabel" destination="eR1-vS-lXz" id="d0P-OX-5Sz"/>
+            </connections>
             <point key="canvasLocation" x="0.0" y="46"/>
         </tableViewCell>
     </objects>
