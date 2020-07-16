@@ -68,8 +68,10 @@ extension ViewController: UIPickerViewDelegate, UIPickerViewDataSource {
 extension ViewController: ApplicationContractView {
     
     func showAlert(message: String) {
-        let alertController = UIAlertController(title: "No Journeys Found", message:
-            "Sorry. We couldn't find any journeys for the specified route.", preferredStyle: .alert)
+        let alertController = UIAlertController(
+            title: "No Journeys Found",
+            message: "Sorry. We couldn't find any journeys for the specified route.",
+            preferredStyle: .alert)
         alertController.addAction(UIAlertAction(title: "Dismiss", style: .default))
 
         self.present(alertController, animated: true, completion: nil)

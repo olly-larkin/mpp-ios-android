@@ -72,7 +72,8 @@ class ApplicationPresenter: ApplicationContract.Presenter() {
 
     @kotlinx.serialization.UnstableDefault
     override fun loadJourneys(departure: String, destination: String) {
-        val view = this.view
+        // TODO: check if stations are the same
+        // TODO: split this up a bit
         launch(coroutineContext) {
 
             view?.setButtonAvailability(false)

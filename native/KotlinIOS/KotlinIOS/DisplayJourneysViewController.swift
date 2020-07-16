@@ -7,7 +7,7 @@ class DisplayJourneysViewController: UIViewController {
     
     private let standardCellIden = "CELL_IDENTIFIER"
     
-    private var presenter = ApplicationContractPresenter()
+    private var presenter = ApplicationContractPresenter()  // TODO: probs get rid
     private var tableData: [String] = []
     private var fareList: [[String]] = []
     
@@ -21,6 +21,7 @@ class DisplayJourneysViewController: UIViewController {
         resultsTableView.tableFooterView = UIView(frame: .zero)
     }
     
+    // TODO: check if needed (probably not)
     func setPresenter(_ presenter: ApplicationContractPresenter) {
         self.presenter = presenter
     }
@@ -31,6 +32,7 @@ class DisplayJourneysViewController: UIViewController {
         resultsTableView?.reloadData()
     }
     
+    // TODO: check if needed (probably not)
     private func priceInPounds(_ pennies: Int32) -> String {
         let pounds = Double(pennies) / 100.0
         return String(format: "£%.02f", pounds)
