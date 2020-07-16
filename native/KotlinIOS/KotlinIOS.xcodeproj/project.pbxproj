@@ -16,6 +16,8 @@
 		47729E2622F447CA00B9B36B /* KotlinIOSUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47729E2522F447CA00B9B36B /* KotlinIOSUITests.swift */; };
 		47729E6E22F4806C00B9B36B /* SharedCode.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 47729E6D22F4806B00B9B36B /* SharedCode.framework */; };
 		47729E6F22F4806C00B9B36B /* SharedCode.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 47729E6D22F4806B00B9B36B /* SharedCode.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		C50B191924C06961000522DE /* CustomCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C50B191824C06961000522DE /* CustomCell.xib */; };
+		C50B191B24C06981000522DE /* CustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C50B191A24C06981000522DE /* CustomCell.swift */; };
 		C52023BF24BEF78A0036BD10 /* DisplayJourneysViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C52023BE24BEF78A0036BD10 /* DisplayJourneysViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -65,6 +67,8 @@
 		47729E2522F447CA00B9B36B /* KotlinIOSUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KotlinIOSUITests.swift; sourceTree = "<group>"; };
 		47729E2722F447CA00B9B36B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		47729E6D22F4806B00B9B36B /* SharedCode.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SharedCode.framework; path = "../../SharedCode/build/xcode-frameworks/SharedCode.framework"; sourceTree = "<group>"; };
+		C50B191824C06961000522DE /* CustomCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomCell.xib; sourceTree = "<group>"; };
+		C50B191A24C06981000522DE /* CustomCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCell.swift; sourceTree = "<group>"; };
 		C52023BE24BEF78A0036BD10 /* DisplayJourneysViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplayJourneysViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -125,6 +129,8 @@
 				47729E0E22F447CA00B9B36B /* LaunchScreen.storyboard */,
 				47729E1122F447CA00B9B36B /* Info.plist */,
 				C52023BE24BEF78A0036BD10 /* DisplayJourneysViewController.swift */,
+				C50B191824C06961000522DE /* CustomCell.xib */,
+				C50B191A24C06981000522DE /* CustomCell.swift */,
 			);
 			path = KotlinIOS;
 			sourceTree = "<group>";
@@ -255,6 +261,7 @@
 			files = (
 				47729E1022F447CA00B9B36B /* LaunchScreen.storyboard in Resources */,
 				47729E0D22F447CA00B9B36B /* Assets.xcassets in Resources */,
+				C50B191924C06961000522DE /* CustomCell.xib in Resources */,
 				47729E0B22F447C800B9B36B /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -302,6 +309,7 @@
 			files = (
 				C52023BF24BEF78A0036BD10 /* DisplayJourneysViewController.swift in Sources */,
 				47729E0822F447C800B9B36B /* ViewController.swift in Sources */,
+				C50B191B24C06981000522DE /* CustomCell.swift in Sources */,
 				47729E0622F447C800B9B36B /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

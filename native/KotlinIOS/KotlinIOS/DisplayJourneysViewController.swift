@@ -17,7 +17,9 @@ class DisplayJourneysViewController: UIViewController {
     }
     
     private func setUpTable() {
-        resultsTableView.register(UITableViewCell.self, forCellReuseIdentifier: standardCellIden)
+        let nib = UINib(nibName: "CustomCell", bundle: nil)
+//        resultsTableView.register(UITableViewCell.self, forCellReuseIdentifier: standardCellIden)
+        resultsTableView.register(nib, forCellReuseIdentifier: standardCellIden)
         resultsTableView.tableFooterView = UIView(frame: .zero)
     }
     
@@ -43,8 +45,9 @@ extension DisplayJourneysViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = resultsTableView.dequeueReusableCell(withIdentifier: standardCellIden)
-        cell?.textLabel?.text = tableData[indexPath.row]
-        return cell!
+        let cell = resultsTableView.dequeueReusableCell(withIdentifier: standardCellIden) as! CustomCell
+//        cell?.textLabel?.text = tableData[indexPath.row]
+        cell.setData()
+        return cell
     }
 }
