@@ -16,62 +16,60 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Rrt-k7-eeL">
-                                <rect key="frame" x="20" y="247" width="374" height="216"/>
-                                <connections>
-                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="311-eS-M5b"/>
-                                </connections>
-                            </pickerView>
-                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wFb-s1-Wk1">
-                                <rect key="frame" x="20" y="468" width="374" height="216"/>
-                                <connections>
-                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="Vwa-yn-hyQ"/>
-                                </connections>
-                            </pickerView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yJb-Pe-N2A">
                                 <rect key="frame" x="20" y="704" width="374" height="30"/>
                                 <state key="normal" title="GET JOURNEYS!">
                                     <color key="titleColor" red="0.74901960779999999" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <state key="disabled">
+                                    <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
                                 <connections>
-                                    <action selector="ButtonPress:" destination="BYZ-38-t0r" eventType="touchUpInside" id="TEW-mT-WrH"/>
+                                    <action selector="journeyButtonPress:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Nba-qX-mhW"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ksm-WL-RNU">
-                                <rect key="frame" x="20" y="100" width="374" height="36"/>
+                                <rect key="frame" x="20" y="386" width="374" height="36"/>
                                 <color key="backgroundColor" systemColor="placeholderTextColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.29999999999999999" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <state key="normal" title="CLICK ME">
+                                <state key="normal" title="From">
                                     <color key="titleColor" red="0.74901960779999999" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
-                                    <action selector="testButtonPress" destination="BYZ-38-t0r" eventType="touchUpInside" id="LQX-Ea-6OC"/>
+                                    <action selector="stationButtonPress:" destination="BYZ-38-t0r" eventType="touchUpInside" id="KDi-Bd-4fv"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qAN-B2-vhk">
+                                <rect key="frame" x="20" y="442" width="374" height="36"/>
+                                <color key="backgroundColor" systemColor="placeholderTextColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.29999999999999999" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="To">
+                                    <color key="titleColor" red="0.74901960779999999" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="stationButtonPress:" destination="BYZ-38-t0r" eventType="touchUpInside" id="5fq-7w-cEj"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="yJb-Pe-N2A" firstAttribute="top" secondItem="wFb-s1-Wk1" secondAttribute="bottom" constant="20" id="20Y-ee-Ksu"/>
-                            <constraint firstItem="Ksm-WL-RNU" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="100" id="GMy-eX-QHW"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="yJb-Pe-N2A" secondAttribute="trailing" constant="20" id="HUG-Vo-CO1"/>
-                            <constraint firstItem="wFb-s1-Wk1" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="KqT-ug-u8B"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Ksm-WL-RNU" secondAttribute="trailing" constant="20" id="MFg-Dx-csh"/>
                             <constraint firstItem="Ksm-WL-RNU" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="OBZ-aJ-Eom"/>
                             <constraint firstItem="yJb-Pe-N2A" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="TWn-Ng-W4Q"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Rrt-k7-eeL" secondAttribute="trailing" constant="20" id="UEv-DT-c8I"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="wFb-s1-Wk1" secondAttribute="trailing" constant="20" id="hIE-Aw-Q4y"/>
-                            <constraint firstItem="wFb-s1-Wk1" firstAttribute="top" secondItem="Rrt-k7-eeL" secondAttribute="bottom" constant="5" id="jzd-o6-5bA"/>
-                            <constraint firstItem="Rrt-k7-eeL" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="llN-4L-1j5"/>
+                            <constraint firstItem="Ksm-WL-RNU" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="XOt-NL-OUR"/>
+                            <constraint firstItem="qAN-B2-vhk" firstAttribute="top" secondItem="Ksm-WL-RNU" secondAttribute="bottom" constant="20" id="bKP-xg-44M"/>
+                            <constraint firstItem="qAN-B2-vhk" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="pKc-yw-cin"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="qAN-B2-vhk" secondAttribute="trailing" constant="20" id="xEq-yV-mN8"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="yJb-Pe-N2A" secondAttribute="bottom" constant="40" id="xyp-we-Yt3"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" id="gM3-TZ-MgG"/>
                     <connections>
+                        <outlet property="destinationButton" destination="qAN-B2-vhk" id="aBT-0R-fcQ"/>
                         <outlet property="getJourneysButton" destination="yJb-Pe-N2A" id="TSJ-Lc-RjV"/>
-                        <outlet property="pickerdeparture" destination="Rrt-k7-eeL" id="hgc-Zd-4Hv"/>
-                        <outlet property="pickerdestination" destination="wFb-s1-Wk1" id="7yM-Nw-QFE"/>
-                        <outlet property="testButton" destination="Ksm-WL-RNU" id="OvX-MF-2LJ"/>
+                        <outlet property="originButton" destination="Ksm-WL-RNU" id="PRh-ZX-bwd"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
