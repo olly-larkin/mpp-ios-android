@@ -71,11 +71,7 @@ extension ViewController: ApplicationContractView {
         let newViewController = storyboard.instantiateViewController(withIdentifier: "DISPLAY_JOUNEYS_VIEW_CONTROLLER") as! DisplayJourneysViewController
         self.navigationController?.isNavigationBarHidden = false
         self.show(newViewController, sender: self)
-<<<<<<< HEAD
-        newViewController.setTableData(fareList)
-=======
         newViewController.setTableData(fares)
->>>>>>> ios_ui
     }
     
     func setButtonAvailability(state: Bool) {

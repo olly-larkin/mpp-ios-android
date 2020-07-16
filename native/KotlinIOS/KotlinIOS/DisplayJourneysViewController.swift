@@ -20,7 +20,7 @@ class DisplayJourneysViewController: UIViewController {
         resultsTableView.tableFooterView = UIView(frame: .zero)
     }
     
-func setTableData(_ fares: Fares) {
+    func setTableData(_ fares: Fares) {
         self.fares = fares
         resultsTableView?.reloadData()
     }
@@ -32,8 +32,12 @@ extension DisplayJourneysViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = resultsTableView.dequeueReusableCell(withIdentifier: standardCellIden)
-//        cell?.textLabel?.text = tableData[indexPath.row]
-        return cell!
+        let cell = resultsTableView.dequeueReusableCell(withIdentifier: standardCellIden) as! CustomCell
+        if (fares != nil) {
+            let time = fares!.outboundJourneys[indexPath.row].departureTime
+            let price = fares!.outboundJourneys[indexPath.row].tickets.map { $0.priceInPennies }.min()
+            cell.setData(time: time, priceInPennies: price ?? 0)
+        }
+        return cell
     }
 }
