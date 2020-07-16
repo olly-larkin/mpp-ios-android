@@ -38,8 +38,7 @@ class ViewController: UIViewController {
     @IBAction func testButtonPress() {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let stationViewController = storyboard.instantiateViewController(withIdentifier: "STATIONS_VIEW_CONTROLLER") as! StationListViewController
-//        self.show(stationViewController, sender: self)
-        self.navigationController?.pushViewController(stationViewController, animated: true)
+        self.show(stationViewController, sender: self)
         stationViewController.setButtonRef(testButton)
         stationViewController.setData(stations: stationNameList)
     }

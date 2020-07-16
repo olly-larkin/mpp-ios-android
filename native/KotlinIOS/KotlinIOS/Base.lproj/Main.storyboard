@@ -38,8 +38,12 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ksm-WL-RNU">
-                                <rect key="frame" x="20" y="100" width="374" height="30"/>
-                                <state key="normal" title="CLICK ME"/>
+                                <rect key="frame" x="20" y="100" width="374" height="36"/>
+                                <color key="backgroundColor" systemColor="placeholderTextColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.29999999999999999" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="CLICK ME">
+                                    <color key="titleColor" red="0.74901960779999999" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
                                 <connections>
                                     <action selector="testButtonPress" destination="BYZ-38-t0r" eventType="touchUpInside" id="LQX-Ea-6OC"/>
                                 </connections>
@@ -64,7 +68,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="gM3-TZ-MgG"/>
                     <connections>
-                        <outlet property="getJourneysButton" destination="yJb-Pe-N2A" id="s9d-ja-VJe"/>
+                        <outlet property="getJourneysButton" destination="yJb-Pe-N2A" id="TSJ-Lc-RjV"/>
                         <outlet property="pickerdeparture" destination="Rrt-k7-eeL" id="hgc-Zd-4Hv"/>
                         <outlet property="pickerdestination" destination="wFb-s1-Wk1" id="7yM-Nw-QFE"/>
                         <outlet property="testButton" destination="Ksm-WL-RNU" id="OvX-MF-2LJ"/>
@@ -147,8 +151,11 @@
                             <searchBar contentMode="redraw" placeholder="Search Stations" showsCancelButton="YES" translatesAutoresizingMaskIntoConstraints="NO" id="z5G-ob-hMi">
                                 <rect key="frame" x="0.0" y="44" width="414" height="56"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="6SY-Cg-RBA" id="GKm-wB-4Hh"/>
+                                </connections>
                             </searchBar>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="3N3-Zx-rZt">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" keyboardDismissMode="onDrag" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="3N3-Zx-rZt">
                                 <rect key="frame" x="0.0" y="100" width="414" height="762"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <connections>
@@ -170,6 +177,7 @@
                         <viewLayoutGuide key="safeArea" id="zjT-2C-15u"/>
                     </view>
                     <connections>
+                        <outlet property="stationSearchBar" destination="z5G-ob-hMi" id="1sm-vt-fJn"/>
                         <outlet property="stationsTableView" destination="3N3-Zx-rZt" id="9MC-Bf-0oZ"/>
                     </connections>
                 </viewController>
