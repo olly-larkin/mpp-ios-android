@@ -3,22 +3,19 @@ import SharedCode
 
 class ViewController: UIViewController {
 
-    private var data: [String] = []
-
-    @IBOutlet private var pickerdeparture: UIPickerView!
-    @IBOutlet private var pickerdestination: UIPickerView!
+    private var stationNameList: [String] = []
+    
     @IBOutlet var getJourneysButton: UIButton!
+    
+    @IBOutlet var originButton: UIButton!
+    @IBOutlet var destinationButton: UIButton!
     
     private let presenter: ApplicationContractPresenter = ApplicationPresenter()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        pickerdeparture.dataSource = self
-        pickerdeparture.delegate = self
-        pickerdestination.dataSource = self
-        pickerdestination.delegate = self
-        
+        originButton.isEnabled = false
+        destinationButton.isEnabled = false
         presenter.onViewTaken(view: self)
     }
     
@@ -27,42 +24,19 @@ class ViewController: UIViewController {
         self.navigationController?.isNavigationBarHidden = true
     }
     
-    @IBAction func ButtonPress(_ sender: Any) {
-        let depart = data[pickerdeparture.selectedRow(inComponent: 0)]
-        let dest = data[pickerdestination.selectedRow(inComponent: 0)]
+    @IBAction func journeyButtonPress(_ sender: Any) {
+        let depart = originButton.currentTitle!
+        let dest = destinationButton.currentTitle!
         presenter.loadJourneys(departure: depart, destination: dest)
     }
-}
-
-extension ViewController: UIPickerViewDelegate, UIPickerViewDataSource {
-    func numberOfComponents(in pickerView: UIPickerView) -> Int {
-        return 1
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-    }
-
-    private func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int {
-        // Column count: use one column.
-        return 1
-    }
-
-    internal func pickerView(_ pickerView: UIPickerView,
-        numberOfRowsInComponent component: Int) -> Int {
-
-            // Row count: rows equals array length.
-            return data.count
-    }
-
-    internal func pickerView(_ pickerView: UIPickerView,
-        titleForRow row: Int,
-        forComponent component: Int) -> String? {
-
-            // Return a string from the array for this row.
-            return data[row]
-    }
     
+    @IBAction func stationButtonPress(_ sender: UIButton) {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let stationViewController = storyboard.instantiateViewController(withIdentifier: "STATIONS_VIEW_CONTROLLER") as! StationListViewController
+        self.show(stationViewController, sender: self)
+        stationViewController.setButtonRef(sender)
+        stationViewController.setData(stations: stationNameList)
+    }
 }
 
 extension ViewController: ApplicationContractView {
@@ -78,7 +52,6 @@ extension ViewController: ApplicationContractView {
     func displayFares(fares: Fares) {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let newViewController = storyboard.instantiateViewController(withIdentifier: "DISPLAY_JOUNEYS_VIEW_CONTROLLER") as! DisplayJourneysViewController
-        self.navigationController?.isNavigationBarHidden = false
         self.show(newViewController, sender: self)
         newViewController.setTableData(fares)
     }
@@ -88,8 +61,8 @@ extension ViewController: ApplicationContractView {
     }
     
     func updateDropDowns(stationNames: [String]) {
-        data = stationNames
-        pickerdeparture.reloadAllComponents()
-        pickerdestination.reloadAllComponents()
+        stationNameList = stationNames
+        originButton.isEnabled = true
+        destinationButton.isEnabled = true
     }
 }

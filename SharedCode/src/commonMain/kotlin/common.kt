@@ -109,7 +109,8 @@ data class UpgradeDetails(
 data class PricingItem(
     val breakdown: List<PricingDetailBreakdown> = listOf(),
     val addOns: List<AddOn> = listOf(),
-    val discounts: PricingItemDiscount = PricingItemDiscount()
+    val discounts: PricingItemDiscount = PricingItemDiscount(),
+    val subTotalInPennies: Int = 0
 )
 
 @Serializable
