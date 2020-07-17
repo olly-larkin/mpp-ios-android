@@ -17,7 +17,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yJb-Pe-N2A">
-                                <rect key="frame" x="20" y="704" width="374" height="30"/>
+                                <rect key="frame" x="20" y="664" width="374" height="30"/>
                                 <state key="normal" title="GET JOURNEYS!">
                                     <color key="titleColor" red="0.74901960779999999" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
@@ -56,18 +56,36 @@
                                     <action selector="stationButtonPress:" destination="BYZ-38-t0r" eventType="touchUpInside" id="5fq-7w-cEj"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="LNER" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="9I6-qa-plU">
+                                <rect key="frame" x="83" y="132" width="248" height="120"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="100"/>
+                                <color key="textColor" red="0.74901960779999999" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Find Tickets" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="PhX-HT-AUc">
+                                <rect key="frame" x="122" y="292" width="170" height="36"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
+                                <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="9I6-qa-plU" secondAttribute="trailing" constant="83" id="9X8-xj-3qq"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="yJb-Pe-N2A" secondAttribute="trailing" constant="20" id="HUG-Vo-CO1"/>
+                            <constraint firstItem="PhX-HT-AUc" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="-94" id="L6Y-px-ZOT"/>
+                            <constraint firstItem="PhX-HT-AUc" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="122" id="M2h-ge-mIc"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Ksm-WL-RNU" secondAttribute="trailing" constant="20" id="MFg-Dx-csh"/>
                             <constraint firstItem="Ksm-WL-RNU" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="OBZ-aJ-Eom"/>
                             <constraint firstItem="yJb-Pe-N2A" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="TWn-Ng-W4Q"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="PhX-HT-AUc" secondAttribute="trailing" constant="122" id="Wir-57-Y1C"/>
                             <constraint firstItem="Ksm-WL-RNU" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="XOt-NL-OUR"/>
                             <constraint firstItem="qAN-B2-vhk" firstAttribute="top" secondItem="Ksm-WL-RNU" secondAttribute="bottom" constant="20" id="bKP-xg-44M"/>
+                            <constraint firstItem="yJb-Pe-N2A" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="275" id="exT-3f-vQl"/>
+                            <constraint firstItem="9I6-qa-plU" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="83" id="iR5-EV-k1R"/>
                             <constraint firstItem="qAN-B2-vhk" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="pKc-yw-cin"/>
+                            <constraint firstItem="9I6-qa-plU" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="-212" id="ukd-0X-eEF"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="qAN-B2-vhk" secondAttribute="trailing" constant="20" id="xEq-yV-mN8"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="yJb-Pe-N2A" secondAttribute="bottom" constant="40" id="xyp-we-Yt3"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -93,6 +111,7 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="kP9-XB-6dN">
                                 <rect key="frame" x="0.0" y="88" width="414" height="774"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <color key="separatorColor" red="0.74901960779999999" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <connections>
                                     <outlet property="dataSource" destination="XYi-XF-u3A" id="2LH-3E-LbK"/>
                                     <outlet property="delegate" destination="XYi-XF-u3A" id="Fc6-LR-bfn"/>
@@ -130,6 +149,7 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="yr2-IN-xc2">
                                 <rect key="frame" x="0.0" y="88" width="414" height="774"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <color key="separatorColor" red="0.74901960779999999" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <connections>
                                     <outlet property="dataSource" destination="CqL-IZ-fgN" id="YQi-OM-nWc"/>
                                 </connections>

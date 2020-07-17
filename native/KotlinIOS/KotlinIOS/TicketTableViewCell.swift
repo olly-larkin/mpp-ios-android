@@ -8,7 +8,7 @@ class TicketTableViewCell : UITableViewCell {
     
     func setData(ticket: String, passengers: Int32, price: Int32) {
         ticketLabel.text = ticket
-        passengersLabel.text = String(passengers) + " passengers"
+        passengersLabel.text = passengers == 1 ? "1 passenger" : String(passengers) + " passengers"
         priceLabel.text = String(format: "£%.02f", Double(price)/100.0)
     }
 }
