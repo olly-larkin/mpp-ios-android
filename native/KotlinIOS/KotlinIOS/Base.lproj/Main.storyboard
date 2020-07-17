@@ -13,48 +13,87 @@
             <objects>
                 <viewController modalPresentationStyle="fullScreen" id="BYZ-38-t0r" customClass="ViewController" customModule="KotlinIOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Rrt-k7-eeL">
-                                <rect key="frame" x="20" y="335" width="374" height="216"/>
-                                <connections>
-                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="311-eS-M5b"/>
-                                </connections>
-                            </pickerView>
-                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wFb-s1-Wk1">
-                                <rect key="frame" x="20" y="556" width="374" height="216"/>
-                                <connections>
-                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="Vwa-yn-hyQ"/>
-                                </connections>
-                            </pickerView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yJb-Pe-N2A">
-                                <rect key="frame" x="20" y="792" width="374" height="30"/>
-                                <state key="normal" title="GET JOURNEYS!"/>
+                                <rect key="frame" x="20" y="664" width="374" height="30"/>
+                                <state key="normal" title="GET JOURNEYS!">
+                                    <color key="titleColor" red="0.74901960779999999" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <state key="disabled">
+                                    <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
                                 <connections>
-                                    <action selector="ButtonPress:" destination="BYZ-38-t0r" eventType="touchUpInside" id="TEW-mT-WrH"/>
+                                    <action selector="journeyButtonPress:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Nba-qX-mhW"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ksm-WL-RNU">
+                                <rect key="frame" x="20" y="386" width="374" height="36"/>
+                                <color key="backgroundColor" systemColor="systemGray5Color" red="0.8980392157" green="0.8980392157" blue="0.91764705879999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="From">
+                                    <color key="titleColor" red="0.74901960779999999" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <state key="disabled">
+                                    <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="stationButtonPress:" destination="BYZ-38-t0r" eventType="touchUpInside" id="KDi-Bd-4fv"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qAN-B2-vhk">
+                                <rect key="frame" x="20" y="442" width="374" height="36"/>
+                                <color key="backgroundColor" systemColor="systemGray5Color" red="0.8980392157" green="0.8980392157" blue="0.91764705879999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="To">
+                                    <color key="titleColor" red="0.74901960779999999" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <state key="disabled">
+                                    <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="stationButtonPress:" destination="BYZ-38-t0r" eventType="touchUpInside" id="5fq-7w-cEj"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="LNER" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="9I6-qa-plU">
+                                <rect key="frame" x="83" y="132" width="248" height="120"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="100"/>
+                                <color key="textColor" red="0.74901960779999999" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Find Tickets" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="PhX-HT-AUc">
+                                <rect key="frame" x="122" y="292" width="170" height="36"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
+                                <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="yJb-Pe-N2A" firstAttribute="top" secondItem="wFb-s1-Wk1" secondAttribute="bottom" constant="20" id="20Y-ee-Ksu"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="9I6-qa-plU" secondAttribute="trailing" constant="83" id="9X8-xj-3qq"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="yJb-Pe-N2A" secondAttribute="trailing" constant="20" id="HUG-Vo-CO1"/>
-                            <constraint firstItem="wFb-s1-Wk1" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="KqT-ug-u8B"/>
+                            <constraint firstItem="PhX-HT-AUc" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="-94" id="L6Y-px-ZOT"/>
+                            <constraint firstItem="PhX-HT-AUc" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="122" id="M2h-ge-mIc"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Ksm-WL-RNU" secondAttribute="trailing" constant="20" id="MFg-Dx-csh"/>
+                            <constraint firstItem="Ksm-WL-RNU" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="OBZ-aJ-Eom"/>
                             <constraint firstItem="yJb-Pe-N2A" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="TWn-Ng-W4Q"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Rrt-k7-eeL" secondAttribute="trailing" constant="20" id="UEv-DT-c8I"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="wFb-s1-Wk1" secondAttribute="trailing" constant="20" id="hIE-Aw-Q4y"/>
-                            <constraint firstItem="wFb-s1-Wk1" firstAttribute="top" secondItem="Rrt-k7-eeL" secondAttribute="bottom" constant="5" id="jzd-o6-5bA"/>
-                            <constraint firstItem="Rrt-k7-eeL" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="llN-4L-1j5"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="yJb-Pe-N2A" secondAttribute="bottom" constant="40" id="xyp-we-Yt3"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="PhX-HT-AUc" secondAttribute="trailing" constant="122" id="Wir-57-Y1C"/>
+                            <constraint firstItem="Ksm-WL-RNU" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="XOt-NL-OUR"/>
+                            <constraint firstItem="qAN-B2-vhk" firstAttribute="top" secondItem="Ksm-WL-RNU" secondAttribute="bottom" constant="20" id="bKP-xg-44M"/>
+                            <constraint firstItem="yJb-Pe-N2A" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="275" id="exT-3f-vQl"/>
+                            <constraint firstItem="9I6-qa-plU" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="83" id="iR5-EV-k1R"/>
+                            <constraint firstItem="qAN-B2-vhk" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="pKc-yw-cin"/>
+                            <constraint firstItem="9I6-qa-plU" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="-212" id="ukd-0X-eEF"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="qAN-B2-vhk" secondAttribute="trailing" constant="20" id="xEq-yV-mN8"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" id="gM3-TZ-MgG"/>
                     <connections>
-                        <outlet property="getJourneysButton" destination="yJb-Pe-N2A" id="s9d-ja-VJe"/>
-                        <outlet property="pickerdeparture" destination="Rrt-k7-eeL" id="hgc-Zd-4Hv"/>
-                        <outlet property="pickerdestination" destination="wFb-s1-Wk1" id="7yM-Nw-QFE"/>
+                        <outlet property="destinationButton" destination="qAN-B2-vhk" id="aBT-0R-fcQ"/>
+                        <outlet property="getJourneysButton" destination="yJb-Pe-N2A" id="TSJ-Lc-RjV"/>
+                        <outlet property="originButton" destination="Ksm-WL-RNU" id="PRh-ZX-bwd"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -69,11 +108,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="kP9-XB-6dN">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="kP9-XB-6dN">
                                 <rect key="frame" x="0.0" y="88" width="414" height="774"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <color key="separatorColor" red="0.74901960779999999" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <connections>
                                     <outlet property="dataSource" destination="XYi-XF-u3A" id="2LH-3E-LbK"/>
+                                    <outlet property="delegate" destination="XYi-XF-u3A" id="Fc6-LR-bfn"/>
                                 </connections>
                             </tableView>
                         </subviews>
@@ -90,22 +131,67 @@
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
                         <outlet property="resultsTableView" destination="kP9-XB-6dN" id="kMF-kb-N34"/>
+                        <outlet property="titleBar" destination="bzU-Ck-3n4" id="Aoc-68-M8j"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FNY-94-YHU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1265" y="1"/>
+            <point key="canvasLocation" x="361" y="735"/>
+        </scene>
+        <!--Tickets-->
+        <scene sceneID="V87-LI-dVC">
+            <objects>
+                <viewController storyboardIdentifier="TICKETS_VIEW_CONTROLLER" title="Tickets" id="CqL-IZ-fgN" customClass="TicketListViewController" customModule="KotlinIOS" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="3l2-vw-XDo">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="yr2-IN-xc2">
+                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <color key="separatorColor" red="0.74901960779999999" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="CqL-IZ-fgN" id="YQi-OM-nWc"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="yr2-IN-xc2" firstAttribute="trailing" secondItem="dxv-Fr-p6m" secondAttribute="trailing" id="Csn-9b-UM5"/>
+                            <constraint firstItem="yr2-IN-xc2" firstAttribute="leading" secondItem="dxv-Fr-p6m" secondAttribute="leading" id="I3s-bx-T9U"/>
+                            <constraint firstItem="yr2-IN-xc2" firstAttribute="top" secondItem="dxv-Fr-p6m" secondAttribute="top" id="nZi-cP-ARW"/>
+                            <constraint firstItem="yr2-IN-xc2" firstAttribute="bottom" secondItem="dxv-Fr-p6m" secondAttribute="bottom" id="tal-bq-RcL"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="dxv-Fr-p6m"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Tickets" id="Elo-DH-ACa"/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <connections>
+                        <outlet property="ticketTable" destination="yr2-IN-xc2" id="dgH-sI-SPe"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Gj2-Y5-AAk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1321.7391304347827" y="734.59821428571422"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="wvP-L0-OYY">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="OPA-k2-XmM" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="W8W-T8-yog">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="W8W-T8-yog">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="barTintColor" red="0.74901960779999999" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
+                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="6kB-wB-ZXr">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </toolbar>
                     <connections>
                         <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="Ra8-qW-Bnd"/>
                     </connections>
@@ -113,6 +199,51 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PKQ-cl-gd2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-539.13043478260875" y="0.6696428571428571"/>
+        </scene>
+        <!--Station List View Controller-->
+        <scene sceneID="xpk-RB-Kyf">
+            <objects>
+                <viewController storyboardIdentifier="STATIONS_VIEW_CONTROLLER" modalPresentationStyle="fullScreen" id="6SY-Cg-RBA" customClass="StationListViewController" customModule="KotlinIOS" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="19l-8L-Vae">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <searchBar contentMode="redraw" placeholder="Search Stations" showsCancelButton="YES" translatesAutoresizingMaskIntoConstraints="NO" id="z5G-ob-hMi">
+                                <rect key="frame" x="0.0" y="44" width="414" height="56"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="6SY-Cg-RBA" id="GKm-wB-4Hh"/>
+                                </connections>
+                            </searchBar>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" keyboardDismissMode="onDrag" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="3N3-Zx-rZt">
+                                <rect key="frame" x="0.0" y="100" width="414" height="762"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="6SY-Cg-RBA" id="UNY-wT-4uf"/>
+                                    <outlet property="delegate" destination="6SY-Cg-RBA" id="NEw-v6-QwG"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="z5G-ob-hMi" firstAttribute="leading" secondItem="zjT-2C-15u" secondAttribute="leading" id="X5d-va-bby"/>
+                            <constraint firstItem="3N3-Zx-rZt" firstAttribute="trailing" secondItem="zjT-2C-15u" secondAttribute="trailing" id="ZZD-1v-0cg"/>
+                            <constraint firstItem="z5G-ob-hMi" firstAttribute="trailing" secondItem="zjT-2C-15u" secondAttribute="trailing" id="b1Z-wS-Obu"/>
+                            <constraint firstItem="3N3-Zx-rZt" firstAttribute="leading" secondItem="zjT-2C-15u" secondAttribute="leading" id="cKj-Yz-irK"/>
+                            <constraint firstItem="3N3-Zx-rZt" firstAttribute="top" secondItem="z5G-ob-hMi" secondAttribute="bottom" id="dLc-ne-sgB"/>
+                            <constraint firstItem="3N3-Zx-rZt" firstAttribute="bottom" secondItem="zjT-2C-15u" secondAttribute="bottom" id="xiL-XA-Mw5"/>
+                            <constraint firstItem="z5G-ob-hMi" firstAttribute="top" secondItem="zjT-2C-15u" secondAttribute="top" id="yAa-By-ozr"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="zjT-2C-15u"/>
+                    </view>
+                    <connections>
+                        <outlet property="stationSearchBar" destination="z5G-ob-hMi" id="1sm-vt-fJn"/>
+                        <outlet property="stationsTableView" destination="3N3-Zx-rZt" id="9MC-Bf-0oZ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="EYR-oZ-M2b" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1323" y="1"/>
         </scene>
     </scenes>
 </document>
