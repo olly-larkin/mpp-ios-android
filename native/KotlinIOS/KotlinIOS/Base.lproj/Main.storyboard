@@ -30,10 +30,13 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ksm-WL-RNU">
                                 <rect key="frame" x="20" y="386" width="374" height="36"/>
-                                <color key="backgroundColor" systemColor="placeholderTextColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.29999999999999999" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" systemColor="systemGray5Color" red="0.8980392157" green="0.8980392157" blue="0.91764705879999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <state key="normal" title="From">
                                     <color key="titleColor" red="0.74901960779999999" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <state key="disabled">
+                                    <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
                                     <action selector="stationButtonPress:" destination="BYZ-38-t0r" eventType="touchUpInside" id="KDi-Bd-4fv"/>
@@ -41,10 +44,13 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qAN-B2-vhk">
                                 <rect key="frame" x="20" y="442" width="374" height="36"/>
-                                <color key="backgroundColor" systemColor="placeholderTextColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.29999999999999999" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" systemColor="systemGray5Color" red="0.8980392157" green="0.8980392157" blue="0.91764705879999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <state key="normal" title="To">
                                     <color key="titleColor" red="0.74901960779999999" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <state key="disabled">
+                                    <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
                                     <action selector="stationButtonPress:" destination="BYZ-38-t0r" eventType="touchUpInside" id="5fq-7w-cEj"/>
@@ -79,7 +85,7 @@
         <!--Journeys-->
         <scene sceneID="Ug7-kK-OlB">
             <objects>
-                <viewController storyboardIdentifier="DISPLAY_JOUNEYS_VIEW_CONTROLLER" modalPresentationStyle="fullScreen" interfaceStyle="light" id="XYi-XF-u3A" customClass="DisplayJourneysViewController" customModule="KotlinIOS" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="DISPLAY_JOUNEYS_VIEW_CONTROLLER" modalPresentationStyle="fullScreen" id="XYi-XF-u3A" customClass="DisplayJourneysViewController" customModule="KotlinIOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="kf2-Fd-l8K">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -181,7 +187,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EYR-oZ-M2b" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1311.5942028985507" y="0.6696428571428571"/>
+            <point key="canvasLocation" x="1323" y="1"/>
         </scene>
     </scenes>
 </document>

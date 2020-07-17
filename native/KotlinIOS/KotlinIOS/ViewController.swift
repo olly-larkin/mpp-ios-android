@@ -14,6 +14,8 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        originButton.isEnabled = false
+        destinationButton.isEnabled = false
         presenter.onViewTaken(view: self)
     }
     
@@ -56,11 +58,11 @@ extension ViewController: ApplicationContractView {
     
     func setButtonAvailability(state: Bool) {
         getJourneysButton.isEnabled = state
-        print("button goes: ", state)
     }
     
     func updateDropDowns(stationNames: [String]) {
         stationNameList = stationNames
-        // TODO: set buttons to available!
+        originButton.isEnabled = true
+        destinationButton.isEnabled = true
     }
 }
