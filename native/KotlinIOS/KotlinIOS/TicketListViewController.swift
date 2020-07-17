@@ -15,7 +15,8 @@ class TicketListViewController : UIViewController {
     }
     
     private func setUpTable() {
-        ticketTable.register(TicketTableViewCell.self, forCellReuseIdentifier: cellIden)
+        let nib = UINib(nibName: "TicketTableViewCell", bundle: nil)
+        ticketTable.register(nib, forCellReuseIdentifier: cellIden)
         ticketTable.tableFooterView = UIView(frame: .zero)
     }
     
@@ -34,22 +35,8 @@ extension TicketListViewController : UITableViewDataSource {
         cell.setData(
             ticket: ticketList[indexPath.row].name,
             passengers: ticketList[indexPath.row].numberOfTickets,
-            price: ticketList[indexPath.row].pricingItem.subTotalInPennies
+            price: ticketList[indexPath.row].priceInPennies
         )
         return cell
-    }
-}
-
-
-class TicketTableViewCell : UITableViewCell {
-    
-    @IBOutlet var ticketLabel: UILabel!
-    @IBOutlet var passengersLabel: UILabel!
-    @IBOutlet var priceLabel: UILabel!
-    
-    func setData(ticket: String, passengers: Int32, price: Int32) {
-        ticketLabel.text = ticket
-        passengersLabel.text = String(passengers) + " passengers"
-        priceLabel.text = String(format: "£%.02f", Double(price)/100.0)
     }
 }

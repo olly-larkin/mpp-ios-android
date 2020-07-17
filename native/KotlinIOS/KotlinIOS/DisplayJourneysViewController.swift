@@ -42,13 +42,13 @@ class DisplayJourneysViewController: UIViewController {
     }
 }
 
-extension DisplayJourneysViewController: UITableViewDataSource {
+extension DisplayJourneysViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return fares!.outboundJourneys.count
     }
     
-    private func getTime(fromDateTime dateTime: String) {
-        
+    private func getTime(fromDateTime dateTime: String) -> String {
+        return String(dateTime[dateTime.index(dateTime.startIndex, offsetBy: 11)..<dateTime.index(dateTime.startIndex, offsetBy: 16)])
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -57,8 +57,8 @@ extension DisplayJourneysViewController: UITableViewDataSource {
             let fullDepartureTime = fares!.outboundJourneys[indexPath.row].departureTime
             let fullArrivalTime = fares!.outboundJourneys[indexPath.row].arrivalTime
             
-            let departureTime = String(fullDepartureTime[fullDepartureTime.index(fullDepartureTime.startIndex, offsetBy: 11)..<fullDepartureTime.index(fullDepartureTime.startIndex, offsetBy: 16)])
-            let arrivalTime = String(fullArrivalTime[fullArrivalTime.index(fullArrivalTime.startIndex, offsetBy: 11)..<fullArrivalTime.index(fullArrivalTime.startIndex, offsetBy: 16)])
+            let departureTime = getTime(fromDateTime: fullDepartureTime)
+            let arrivalTime = getTime(fromDateTime: fullArrivalTime)
             
             let price = fares!.outboundJourneys[indexPath.row].tickets.map { $0.priceInPennies }.min()
             
@@ -69,5 +69,12 @@ extension DisplayJourneysViewController: UITableViewDataSource {
             )
         }
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let ticketsViewController = storyboard.instantiateViewController(withIdentifier: "TICKETS_VIEW_CONTROLLER") as! TicketListViewController
+        self.show(ticketsViewController, sender: self)
+        ticketsViewController.setData(tickets: fares!.outboundJourneys[indexPath.row].tickets)
     }
 }

@@ -48,7 +48,6 @@ extension StationListViewController : UITableViewDataSource, UITableViewDelegate
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        // TODO: this
         buttonToChange?.setTitle(stationsFiltered[indexPath.row], for: .normal)
         self.navigationController?.popViewController(animated: true)
     }

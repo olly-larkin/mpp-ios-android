@@ -90,11 +90,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="kP9-XB-6dN">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="kP9-XB-6dN">
                                 <rect key="frame" x="0.0" y="88" width="414" height="774"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <connections>
                                     <outlet property="dataSource" destination="XYi-XF-u3A" id="2LH-3E-LbK"/>
+                                    <outlet property="delegate" destination="XYi-XF-u3A" id="Fc6-LR-bfn"/>
                                 </connections>
                             </tableView>
                         </subviews>
@@ -121,7 +122,7 @@
         <!--Tickets-->
         <scene sceneID="V87-LI-dVC">
             <objects>
-                <viewController storyboardIdentifier="TICKET_VIEW_CONTROLLER" title="Tickets" id="CqL-IZ-fgN" customClass="TicketListViewController" customModule="KotlinIOS" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="TICKETS_VIEW_CONTROLLER" title="Tickets" id="CqL-IZ-fgN" customClass="TicketListViewController" customModule="KotlinIOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="3l2-vw-XDo">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -129,50 +130,6 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="yr2-IN-xc2">
                                 <rect key="frame" x="0.0" y="88" width="414" height="774"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="70" id="jGz-QB-aY2" customClass="TicketTableViewCell" customModule="KotlinIOS" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="414" height="70"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="jGz-QB-aY2" id="pBy-Kl-iFR">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="70"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ticket" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xyH-ba-D9J">
-                                                    <rect key="frame" x="20" y="10" width="47" height="20"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Price" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D4s-tU-gX7">
-                                                    <rect key="frame" x="355" y="24.5" width="39" height="21"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Passengers" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i3c-Rn-SYe">
-                                                    <rect key="frame" x="20" y="40" width="89" height="20"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                            <constraints>
-                                                <constraint firstAttribute="trailing" secondItem="D4s-tU-gX7" secondAttribute="trailing" constant="20" id="1a2-O3-iYO"/>
-                                                <constraint firstItem="xyH-ba-D9J" firstAttribute="top" secondItem="pBy-Kl-iFR" secondAttribute="top" constant="10" id="F2m-ce-PJ9"/>
-                                                <constraint firstItem="xyH-ba-D9J" firstAttribute="leading" secondItem="pBy-Kl-iFR" secondAttribute="leading" constant="20" id="OvH-LF-fai"/>
-                                                <constraint firstItem="i3c-Rn-SYe" firstAttribute="top" secondItem="xyH-ba-D9J" secondAttribute="bottom" constant="10" id="QJt-VK-a7W"/>
-                                                <constraint firstItem="i3c-Rn-SYe" firstAttribute="leading" secondItem="pBy-Kl-iFR" secondAttribute="leading" constant="20" id="Zhe-kF-QvW"/>
-                                                <constraint firstItem="D4s-tU-gX7" firstAttribute="centerY" secondItem="pBy-Kl-iFR" secondAttribute="centerY" id="rvS-oh-mPt"/>
-                                                <constraint firstAttribute="bottom" secondItem="i3c-Rn-SYe" secondAttribute="bottom" constant="10" id="tdh-9U-BFh"/>
-                                            </constraints>
-                                        </tableViewCellContentView>
-                                        <connections>
-                                            <outlet property="passengersLabel" destination="i3c-Rn-SYe" id="Hzl-ls-XaM"/>
-                                            <outlet property="priceLabel" destination="D4s-tU-gX7" id="gtY-fP-y7M"/>
-                                            <outlet property="ticketLabel" destination="xyH-ba-D9J" id="Ul1-Rv-3yX"/>
-                                        </connections>
-                                    </tableViewCell>
-                                </prototypes>
                                 <connections>
                                     <outlet property="dataSource" destination="CqL-IZ-fgN" id="YQi-OM-nWc"/>
                                 </connections>
